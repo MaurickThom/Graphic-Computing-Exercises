@@ -85,5 +85,5 @@ int main(int argc, char **argv)
    menu();
    return 0;
 }
-// g++ -m32 -Wall -o menu.out menu.cpp -L"C:\MinGW\lib" -lglu32 -lglut32 -lopengl32 -lstdc++
-// ./menu.out
+// g++ -m32 -Wall -o 1.out 1.cpp -L"C:\MinGW\lib" -lglu32 -lglut32 -lopengl32 -lstdc++
+// ./1.out

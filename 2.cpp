@@ -80,3 +80,5 @@ int main(int argc, char** argv)
 	return 0;
 }
 
+// g++ -m32 -Wall -o 2.out 2.cpp -L"C:\MinGW\lib" -lglu32 -lglut32 -lopengl32 -lstdc++
+// ./2..out
