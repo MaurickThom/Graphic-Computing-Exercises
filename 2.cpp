@@ -9,13 +9,15 @@ void init (void)
 	glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
 }
 
-void puntos(double x, double y){
+void point(double x, double y)
+{
 	glBegin(GL_POINTS);
 	glVertex2f ( x, y);
 	glEnd();
 }
 
-void circulo(double radio, double a, double b){
+void circle(double radio, double a, double b)
+{
 	//radio = sqrt( pow(( 0. - a ),2) + pow(( 0.5 - b ),2) ) ;
 	double x;
 	double y;
@@ -27,12 +29,13 @@ void circulo(double radio, double a, double b){
 		//x = a + radio * cos(t);
 		//y = b + radio * sin(t);
 		
-		puntos( x, y );
+		point( x, y );
 		
 	}
 }
 
-void line(double x, double y, double x1, double y1){
+void line(double x, double y, double x1, double y1)
+{
 	glBegin(GL_LINES);
 	
 	glVertex2f (x, y);
@@ -85,12 +88,12 @@ void display(void)
 	
 	glEnd();
 	
-	circulo(0.022, -0.03, -0.55);
+	circle(0.022, -0.03, -0.55);
 
-	circulo(0.04, -0.1, -0.38);
-	circulo(0.04, 0.1, -0.38);
+	circle(0.04, -0.1, -0.38);
+	circle(0.04, 0.1, -0.38);
 	
-	circulo(0.07, -0.3, 0.0);
+	circle(0.07, -0.3, 0.0);
 	glBegin(GL_POINTS);
 	glVertex2f ( -.33, .1 );
 	glVertex2f ( -.335, .13 );
@@ -122,4 +125,4 @@ int main(int argc, char** argv)
 	return 0;
 }
 // g++ -m32 -Wall -o 2.out 2.cpp -L"C:\MinGW\lib" -lglu32 -lglut32 -lopengl32 -lstdc++
-// ./2..out
+// ./2.out

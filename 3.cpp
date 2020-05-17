@@ -6,32 +6,15 @@
 void init()
 {
     glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
     gluOrtho2D(-5, 5, -5, 5);
     glClearColor(0.0, 0.0, 0.0, 0.0);
 }
-void ReProyectar(int w, int h)
-{
-    GLfloat formato;
 
-    if (h == 0)
-        h = 1;
-
-    glViewport(0, 0, w, h);
-
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-
-    formato = (GLfloat)w / (GLfloat)h;
-    if (w <= h)
-        glOrtho(-10.0f, 10.0f, -10.0f / formato, 10.0f / formato, -1.0f, 1.0f);
-    else
-        glOrtho(-10.0f * formato, 10.0f * formato, -10.0f, 10.0f, -1.0f, 1.0f);
-}
 void drawScene()
 {
-    glMatrixMode(GL_MODELVIEW);
+    // glMatrixMode(GL_MODELVIEW);
     glClear(GL_COLOR_BUFFER_BIT);
-    glLoadIdentity();
     glColor3f(0.431, 0.141, 0.706);
     glColor3f(1, 1, 1);
     glBegin(GL_LINE_STRIP);
@@ -87,7 +70,7 @@ int main(int argc, char **argv)
     glutInitWindowPosition(800, 800);
     glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
     init();
-    glutReshapeFunc(ReProyectar);
+    // glutReshapeFunc(ReProyectar);
     glutDisplayFunc(drawScene);
     // glutIdleFunc(drawScene);
     glutMainLoop();
